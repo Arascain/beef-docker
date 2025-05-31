@@ -63,7 +63,7 @@ Ultra-stable Docker image for BeEF deployment on modern Kali/Debian without Ruby
 
 ## 🇬🇧 Build :
 
-```bash
+bash
 podman build -t beef-kali2025 .
 
 
