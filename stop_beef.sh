@@ -1,2 +1,2 @@
 #!/bin/bash
-docker-compose down
+pordman-compose down
