@@ -1,2 +1,2 @@
 #!/bin/bash
-pordman-compose down
+podman-compose down
