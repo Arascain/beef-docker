@@ -21,8 +21,15 @@ podman-compose up --build
 
 ## 🇫🇷 Build :
 
-```bash
-docker build -t beef-kali2025 .
+bash :
+    docker build -t beef-kali2025 .
+
+Mode interactif (pour debug / dev) :
+    podman run -it -p 3000:3000 beef-kali2025
+
+Mode détaché (prod / lab) :
+    podman run -d --name beef-pro -p 3000:3000 beef-kali2025
+
 
 
 ## 🇫🇷 Run :
