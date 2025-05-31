@@ -22,7 +22,7 @@ podman-compose up --build
 ## 🇫🇷 Build :
 
 bash :
-    docker build -t beef-kali2025 .
+    podman build -t beef-kali2025 .
 
 Mode interactif (pour debug / dev) :
     podman run -it -p 3000:3000 beef-kali2025
@@ -33,8 +33,8 @@ Mode détaché (prod / lab) :
 
 
 ## 🇫🇷 Run :
-docker run -it -p 3000:3000 beef-kali2025
-docker run -d --name beef-pro -p 3000:3000 beef-kali2025
+podman run -it -p 3000:3000 beef-kali2025
+podman run -d --name beef-pro -p 3000:3000 beef-kali2025
 
 
 Et accéder à :
@@ -64,12 +64,12 @@ Ultra-stable Docker image for BeEF deployment on modern Kali/Debian without Ruby
 ## 🇬🇧 Build :
 
 ```bash
-docker build -t beef-kali2025 .
+podman build -t beef-kali2025 .
 
 
 ## 🇬🇧 Run :
-docker run -it -p 3000:3000 beef-kali2025
-docker run -d --name beef-pro -p 3000:3000 beef-kali2025
+podman run -it -p 3000:3000 beef-kali2025
+podman run -d --name beef-pro -p 3000:3000 beef-kali2025
 
 
 
