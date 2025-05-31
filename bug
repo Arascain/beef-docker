@@ -1,17 +1,3 @@
-
-Post-install message from rubyzip:
-RubyZip 3.0 is coming!
-**********************
-
-The public API of some Rubyzip classes has been modernized to use named
-parameters for optional arguments. Please check your usage of the
-following classes:
-  * `Zip::File`
-  * `Zip::Entry`
-  * `Zip::InputStream`
-  * `Zip::OutputStream`
-  * `Zip::DOSTime`
-
 Run your test suite with the `RUBYZIP_V3_API_WARN` environment
 variable set to see warnings about usage of the old API. This will
 help you to identify any changes that you need to make to your code.
@@ -24,9 +10,8 @@ See https://github.com/rubyzip/rubyzip for details. The Changelog also
 lists other enhancements and bugfixes that have been implemented since
 version 2.3.0.
 rake aborted!
-Don't know how to build task 'bundle:install' (See the list of available tasks with `rake --tasks`)
+Don't know how to build task 'beef:minify' (See the list of available tasks with `rake --tasks`)
 
 (See full trace by running task with --trace)
-Error: building at STEP "RUN bundle config jobs 2 && bundle install &&     rake bundle:install &&     rake beef:minify": while running runtime: exit status 1
-                                                                                                                                                          
-┌──(john㉿kali)-[/home/app/beef-docker]
+Error: building at STEP "RUN bundle config jobs 2 && bundle install && rake beef:minify": while running runtime: exit status 1
+                                                                                                                               
