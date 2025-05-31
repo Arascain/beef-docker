@@ -4,7 +4,7 @@ RUN apt update && apt install -y \
   curl gnupg2 gcc g++ make autoconf automake bison libgdbm-dev \
   libncurses5-dev libtool libyaml-dev libreadline-dev zlib1g-dev \
   libffi-dev pkg-config sqlite3 libsqlite3-dev libssl-dev git \
-  libcurl4-openssl-dev
+  libcurl4-openssl-dev locales
 
 WORKDIR /usr/src
 RUN curl -O https://cache.ruby-lang.org/pub/ruby/2.7/ruby-2.7.8.tar.gz && \
@@ -21,6 +21,14 @@ RUN gem install bundler -v 2.3.27
 RUN git clone https://github.com/beefproject/beef.git /opt/beef && \
     cd /opt/beef && \
     git checkout beef-0.4.7.3
+
+# Modification des credentials pour démarrer BeEF dans Docker
+RUN sed -i 's/user: "beef"/user: "admin"/' /opt/beef/config.yaml && \
+    sed -i 's/passwd: "beef"/passwd: "ChangeMe123!"/' /opt/beef/config.yaml
+
+# Fix des locales pour éviter les UTF-8 errors
+RUN echo "en_US.UTF-8 UTF-8" > /etc/locale.gen && locale-gen
+ENV LANG en_US.UTF-8
 
 WORKDIR /opt/beef
 RUN bundle config jobs 2 && bundle install
