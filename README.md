@@ -48,6 +48,12 @@ http://localhost:3000/ui/panel
 
 podman exec -it e5238377fdca cat /opt/beef/config.yaml 
 
+Pour vraiment tester depuis l’extérieur :
+
+    docker run -it --rm curlimages/curl curl http://TON_IP_PUBLIC:3000/hook.js
+
+(ça simule un navigateur distant qui se connecte)
+    
 ## 🇬🇧 Description
 
 Ultra-stable Docker image for BeEF deployment on modern Kali/Debian without Ruby/SSL conflicts.
