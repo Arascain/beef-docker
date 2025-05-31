@@ -20,11 +20,7 @@ RUN gem install bundler -v 2.3.27
 
 RUN git clone https://github.com/beefproject/beef.git /opt/beef && \
     cd /opt/beef && \
-    git checkout v0.5.0.0
-
-# Patch Gemfile sqlite3 et supprimer le lockfile pour résoudre proprement
-RUN sed -i 's/gem "sqlite3".*/gem "sqlite3", "~> 1.4.2"/' /opt/beef/Gemfile && \
-    rm -f /opt/beef/Gemfile.lock
+    git checkout beef-0.4.7.3
 
 WORKDIR /opt/beef
 RUN bundle config jobs 2 && bundle install
