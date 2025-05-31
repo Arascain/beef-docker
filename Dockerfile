@@ -28,14 +28,14 @@ RUN sed -i 's/user: "beef"/user: "admin"/' /opt/beef/config.yaml && \
 RUN echo "en_US.UTF-8 UTF-8" > /etc/locale.gen && locale-gen
 ENV LANG en_US.UTF-8
 
-# Bloc GeoIP optionnel
+# Bloc GeoIP optionnel (à activer avec votre licence MaxMind)
 # RUN mkdir -p /opt/GeoIP && \
 #     curl -L -o /opt/GeoIP/GeoLite2-City.tar.gz "https://download.maxmind.com/app/geoip_download?edition_id=GeoLite2-City&license_key=YOUR_LICENSE_KEY&suffix=tar.gz" && \
 #     tar --strip-components=1 -xvzf /opt/GeoIP/GeoLite2-City.tar.gz -C /opt/GeoIP
 
 WORKDIR /opt/beef
 
-RUN bundle config jobs 2 && bundle install && rake beef:minify
+RUN bundle config jobs 2 && bundle install
 
 EXPOSE 3000
 
