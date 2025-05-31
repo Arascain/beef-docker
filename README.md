@@ -23,6 +23,8 @@ docker build -t beef-kali2025 .
 
 ## 🇫🇷 Run :
 docker run -it -p 3000:3000 beef-kali2025
+docker run -d --name beef-pro -p 3000:3000 beef-kali2025
+
 
 Et accéder à :
 http://localhost:3000/ui/panel
@@ -54,6 +56,8 @@ docker build -t beef-kali2025 .
 
 ## 🇬🇧 Run :
 docker run -it -p 3000:3000 beef-kali2025
+docker run -d --name beef-pro -p 3000:3000 beef-kali2025
+
 
 
 Access to :
