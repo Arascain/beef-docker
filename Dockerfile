@@ -27,4 +27,4 @@ RUN bundle config jobs 2 && bundle install
 
 EXPOSE 3000
 
-CMD ["bash", "/opt/beef/beef"]
+CMD ["ruby", "/opt/beef/beef"]
