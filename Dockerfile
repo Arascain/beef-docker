@@ -1,0 +1,35 @@
+FROM debian:bullseye
+
+# Installer les dépendances système
+RUN apt update && apt install -y \
+  curl gnupg2 gcc g++ make autoconf automake bison libgdbm-dev \
+  libncurses5-dev libtool libyaml-dev libreadline-dev zlib1g-dev \
+  libffi-dev pkg-config sqlite3 libsqlite3-dev libssl-dev git
+
+# Télécharger et compiler Ruby 2.7.8
+WORKDIR /usr/src
+RUN curl -O https://cache.ruby-lang.org/pub/ruby/2.7/ruby-2.7.8.tar.gz && \
+    tar -xzf ruby-2.7.8.tar.gz && \
+    cd ruby-2.7.8 && \
+    ./configure && \
+    make && \
+    make install
+
+# Vérification de la version Ruby
+RUN ruby -v
+
+# Installer la bonne version de bundler compatible
+RUN gem install bundler -v 2.3.27
+
+# Cloner BeEF depuis GitHub
+RUN git clone https://github.com/beefproject/beef.git /opt/beef
+
+# Installation des gems nécessaires pour BeEF
+WORKDIR /opt/beef
+RUN bundle install
+
+# Exposer le port par défaut de BeEF
+EXPOSE 3000
+
+# Commande de démarrage par défaut
+CMD ["bash", "/opt/beef/beef"]
