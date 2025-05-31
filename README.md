@@ -14,6 +14,10 @@ Image Docker ultra-stable pour installer BeEF sur Kali/Debian modernes sans conf
 
 ---
 
+git clone https://github.com/Arascain/beef-docker.git
+cd beef-docker
+podman-compose up --build
+
 
 ## 🇫🇷 Build :
 
