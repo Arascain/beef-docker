@@ -24,6 +24,13 @@ docker build -t beef-kali2025 .
 ## 🇫🇷 Run :
 docker run -it -p 3000:3000 beef-kali2025
 
+Et accéder à :
+http://localhost:3000/ui/panel
+Avec :
+
+    User: admin
+
+    Pass: ChangeMe123!
 
 
 ## 🇬🇧 Description
@@ -47,3 +54,14 @@ docker build -t beef-kali2025 .
 
 ## 🇬🇧 Run :
 docker run -it -p 3000:3000 beef-kali2025
+
+
+Access to :
+http://localhost:3000/ui/panel
+
+With :
+
+    User: admin
+
+    Pass: ChangeMe123!
+
