@@ -28,12 +28,14 @@ docker run -d --name beef-pro -p 3000:3000 beef-kali2025
 
 Et accéder à :
 http://localhost:3000/ui/panel
-Avec :
 
-    User: admin
+    # Credentials to authenticate in BeEF.
+    # Used by both the RESTful API and the Admin interface
+    credentials:
+        user:   "beef"
+        passwd: "ChangeMe123!"
 
-    Pass: ChangeMe123!
-
+podman exec -it e5238377fdca cat /opt/beef/config.yaml 
 
 ## 🇬🇧 Description
 
@@ -63,9 +65,11 @@ docker run -d --name beef-pro -p 3000:3000 beef-kali2025
 Access to :
 http://localhost:3000/ui/panel
 
-With :
+    # Credentials to authenticate in BeEF.
+    # Used by both the RESTful API and the Admin interface
+    credentials:
+        user:   "beef"
+        passwd: "ChangeMe123!"
 
-    User: admin
-
-    Pass: ChangeMe123!
+podman exec -it e5238377fdca cat /opt/beef/config.yaml 
 
