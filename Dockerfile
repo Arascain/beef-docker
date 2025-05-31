@@ -1,10 +1,11 @@
 FROM debian:bullseye
 
-# Installer les dépendances système
+# Installer les dépendances système + dépendances curb
 RUN apt update && apt install -y \
   curl gnupg2 gcc g++ make autoconf automake bison libgdbm-dev \
   libncurses5-dev libtool libyaml-dev libreadline-dev zlib1g-dev \
-  libffi-dev pkg-config sqlite3 libsqlite3-dev libssl-dev git
+  libffi-dev pkg-config sqlite3 libsqlite3-dev libssl-dev git \
+  libcurl4-openssl-dev
 
 # Télécharger et compiler Ruby 2.7.8
 WORKDIR /usr/src
@@ -15,7 +16,7 @@ RUN curl -O https://cache.ruby-lang.org/pub/ruby/2.7/ruby-2.7.8.tar.gz && \
     make && \
     make install
 
-# Vérification de la version Ruby
+# Vérification Ruby
 RUN ruby -v
 
 # Installer bundler compatible
